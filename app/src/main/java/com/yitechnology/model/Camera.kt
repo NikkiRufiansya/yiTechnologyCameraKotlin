@@ -1,3 +1,3 @@
 package com.yitechnology.model
 
-data class Camera (val name: String, val url: String)
+data class Camera (val name: String, val url: Int)

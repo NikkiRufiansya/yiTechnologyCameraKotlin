@@ -22,9 +22,15 @@ class ResolutionModeActivity : AppCompatActivity() {
 
         binding.btnNext.setOnClickListener {
             val selectedOption: Int = binding.radioGroup.checkedRadioButtonId
-            radioButton = findViewById(selectedOption)
-            Toast.makeText(this, radioButton.text, Toast.LENGTH_SHORT).show()
-            startActivity(Intent(this, StorageModeActivity::class.java))
+
+            if (selectedOption == -1) {
+                Toast.makeText(this, "Please choose one", Toast.LENGTH_SHORT).show()
+            } else {
+                radioButton = findViewById(selectedOption)
+                Toast.makeText(this, radioButton.text, Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, StorageModeActivity::class.java))
+            }
+
 
         }
     }

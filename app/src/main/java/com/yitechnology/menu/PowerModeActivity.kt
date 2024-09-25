@@ -11,6 +11,7 @@ import com.yitechnology.databinding.ActivityPowerModeBinding
 class PowerModeActivity : AppCompatActivity() {
     lateinit var binding: ActivityPowerModeBinding
     lateinit var radioButton: RadioButton
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityPowerModeBinding.inflate(layoutInflater)
@@ -20,12 +21,17 @@ class PowerModeActivity : AppCompatActivity() {
             super.onBackPressed()
         }
 
+
         binding.btnNext.setOnClickListener {
             val selectedOption: Int = binding.radioGroup.checkedRadioButtonId
-            radioButton = findViewById(selectedOption)
-            Toast.makeText(this, radioButton.text, Toast.LENGTH_SHORT).show()
-            startActivity(Intent(this, VisionModeActivity::class.java))
 
+            if (selectedOption == -1) {
+                Toast.makeText(this, "Please choose one", Toast.LENGTH_SHORT).show()
+            } else {
+                radioButton = findViewById(selectedOption)
+                Toast.makeText(this, radioButton.text, Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, VisionModeActivity::class.java))
+            }
         }
     }
 }

@@ -17,6 +17,7 @@
             android:text="Choose Country"
             android:textSize="@dimen/_16ssp"
             android:textColor="@color/white"
+            android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </androidx.appcompat.widget.Toolbar>
