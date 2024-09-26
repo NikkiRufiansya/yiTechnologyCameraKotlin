@@ -18,6 +18,8 @@ object CameraData {
         )
     }
 
+
+
     fun getDataHome(): List<Camera> {
         return listOf(
             Camera("Living Room",R.drawable.living_room),
